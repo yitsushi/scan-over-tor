@@ -11,7 +11,7 @@ if [[ "x${domain}" = "x" ]]; then
 fi
 
 aquatone-discover -d "${domain}"
-torify aquatone-scan -d "${domain}" -p large
+torify aquatone-scan -d "${domain}" -p small
 
 mkdir ~/aquatone/${domain}
 torify webscreenshot \
