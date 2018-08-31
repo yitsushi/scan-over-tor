@@ -2,6 +2,7 @@ FROM base/archlinux:latest
 
 RUN pacman -Suy --noconfirm && \
     pacman -S --noconfirm \
+      tor torsocks \
       ca-certificates \
       python python-setuptools python-pip
 
