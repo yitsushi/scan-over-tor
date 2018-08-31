@@ -14,7 +14,7 @@ fi
 mkdir -p  "/root/aquatone/${domain}"
 
 torify nikto \
-  -h "${domain}" \
+  -h "https://${domain}/" \
   -Display v \
   -output "/root/aquatone/${domain}/nikto.txt"
 
