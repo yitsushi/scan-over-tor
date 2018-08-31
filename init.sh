@@ -7,15 +7,22 @@ domain="${1}"
 if [[ "x${domain}" = "x" ]]; then
   echo "${@}"
   echo '[!!] No domain provided'
-  exit
+  exit 1
 fi
 
-aquatone-discover -d "${domain}"
-aquatone-scan -d "${domain}" -p small
+mkdir -p  "/root/aquatone/${domain}"
 
-mkdir /root/aquatone/${domain}
-torify webscreenshot \
-  -i "/root/aquatone/${domain}/urls.txt" \
-  -o "/root/aquatone/${domain}"
+torify nikto \
+  -h "${domain}" \
+  -Display v \
+  -output "/root/aquatone/${domain}/nikto.txt"
 
-torify aquatone-takeover -d "${domain}"
+#aquatone-discover -d "${domain}"
+#aquatone-scan -d "${domain}" -p small
+#
+#mkdir /root/aquatone/${domain}
+#torify webscreenshot \
+#  -i "/root/aquatone/${domain}/urls.txt" \
+#  -o "/root/aquatone/${domain}"
+#
+#torify aquatone-takeover -d "${domain}"
