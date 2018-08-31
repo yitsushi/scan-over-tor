@@ -6,6 +6,8 @@ before_install:
 - docker pull yitsushi/scan-over-tor
 script:
 - docker run -v $(pwd)/aquatone:/root/aquatone yitsushi/scan-over-tor skarlso.com
+branches:
+  only: master
 deploy:
   provider: s3
   access_key_id:
