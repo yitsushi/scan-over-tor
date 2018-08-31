@@ -5,7 +5,7 @@ services:
 before_install:
 - docker build -t scan-over-tor .
 script:
-- docker run -v $(pwd)/aquatone:/root/aquatone scan-over-tor skarlso.com
+- docker run -v $(pwd)/aquatone:/root/aquatone scan-over-tor skarlso.com 80.98.188.248
 deploy:
   provider: s3
   access_key_id:

@@ -4,6 +4,7 @@
 tor
 
 domain="${1}"
+ip="${2}"
 
 if [[ "x${domain}" = "x" ]]; then
   echo "${@}"
@@ -14,7 +15,8 @@ fi
 mkdir -p  "/root/aquatone/${domain}"
 
 torify nikto \
-  -h "https://${domain}/" \
+  -h "https://${ip}/" \
+  -vhost "${domain}" \
   -Display v \
   -output "/root/aquatone/${domain}/nikto.txt"
 
