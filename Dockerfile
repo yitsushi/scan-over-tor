@@ -12,7 +12,7 @@ RUN mkdir -p /var/lib/tor
 
 RUN curl -sLo wapiti.tar.gz https://sourceforge.net/project && \
       tar -zxf wapiti.tar.gz && \
-      cd wapiti3-3.0.1/ &&
+      cd wapiti3-3.0.1/ && \
       python setup.py install
 
 COPY torrc /etc/tor/torrc
