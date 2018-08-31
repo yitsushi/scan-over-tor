@@ -18,4 +18,4 @@ torify webscreenshot \
   -i "/root/aquatone/${domain}/urls.txt" \
   -o "/root/aquatone/${domain}"
 
-torify aquatone-takeover -d "${domain}"
+aquatone-takeover -d "${domain}"
