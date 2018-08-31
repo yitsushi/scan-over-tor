@@ -1,6 +1,7 @@
 #!/bin/bash
 
-sudo -u tor tor
+#sudo -u tor tor
+tor
 
 domain="${1}"
 
