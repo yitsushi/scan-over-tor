@@ -1,8 +1,14 @@
-#!/bin/ash
+#!/bin/bash
 
 sudo -u tor tor
 
 domain="${1}"
+
+if [[ "x${domain}" = "x" ]]; then
+  echo "${@}"
+  echo '[!!] No domain provided'
+  exit
+fi
 
 aquatone-discover -d "${domain}"
 torify aquatone-scan -d "${domain}" -p large
