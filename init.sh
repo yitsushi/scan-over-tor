@@ -11,11 +11,11 @@ if [[ "x${domain}" = "x" ]]; then
 fi
 
 aquatone-discover -d "${domain}"
-torify aquatone-scan -d "${domain}" -p small
+aquatone-scan -d "${domain}" -p small
 
-mkdir ~/aquatone/${domain}
+mkdir /root/aquatone/${domain}
 torify webscreenshot \
-  -i "~/aquatone/${domain}/urls.txt" \
-  -o "~/aquatone/${domain}"
+  -i "/root/aquatone/${domain}/urls.txt" \
+  -o "/root/aquatone/${domain}"
 
 torify aquatone-takeover -d "${domain}"
