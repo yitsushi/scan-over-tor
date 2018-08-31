@@ -14,11 +14,9 @@ fi
 
 mkdir -p  "/root/aquatone/${domain}"
 
-torify nikto \
-  -h "https://${ip}/" \
-  -vhost "${domain}" \
-  -Display v \
-  -output "/root/aquatone/${domain}/nikto.txt"
+torify wapiti \
+  -u "https://${domain}/" \
+  -o  "/root/aquatone/${domain}"
 
 #aquatone-discover -d "${domain}"
 #aquatone-scan -d "${domain}" -p small
